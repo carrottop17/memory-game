@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<link rel="stylesheet" type="text/css" href="card-flip.css">
+
+</head>
+<body>
+	<!-- outer container to make a 3d space for the childer -->
+	<div class="mg-tile">
+		<!-- inner container to play in the 3d area which will have its own childern -->
+		<div class="mg-tile-inner">
+			<div class="mg-front">
+			<!-- front of card -->
+			<img src="images/square.jpeg" alt="">
+			</div>
+			<div class="mg-back">
+			<!-- back of card -->
+			</div>
+		</div>
+	</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		$('.mg-tile-inner').click(function() {
+			$(this).toggleClass('flip');
+		});
+	});
+
+</script>
+
+</body>
+</html>

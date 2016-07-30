@@ -1,0 +1,88 @@
+body{
+	background-image:url('images/legobackground.jpg');
+	background-size:1000px;
+	margin: 30px;
+}
+
+h1{
+	font-size: 64px;
+	-webkit-text-stroke: 4px black;
+}
+
+h2{
+	font-size: 46px;
+	-webkit-text-stroke: 3px black;
+}
+
+h1, h2{
+	text-align: center;
+	color: white;
+	text-shadow: 4px 3px 1px #F9EB31;
+	font-family: 'Fredoka One';
+}
+
+.mg-tile{
+	height: 207px;
+	perspective: 500px;
+	width: 208px;
+	/* border: 1px solid black; */
+	padding: 0;
+	display: inline-block;
+	border: 4px #f9eb31 solid;
+	/* margin: 30px; */
+}
+
+.mg-tile-inner{
+	width: 200px;
+	position: relative;
+	/* children will be absolute */
+	transform-style:preserve-3d;
+	transition: all .5s;
+
+}
+
+.mg-front, .mg-back{
+	position: absolute;
+	top: 0;
+	left: 0;
+	/* border: 2px red solid; */
+	backface-visibility: hidden;
+}
+
+.mg-front{
+	transform: rotateY(180deg);
+}
+
+.mg-back{
+	background: url("images/LEGO_logo.jpg") 50% 50% no-repeat;
+	width: 200px;
+	height: 200px;
+}
+
+.flipped{
+
+}
+.flip{
+	transform: rotateY(-180deg);
+}
+.mg-contents{
+	width: auto;
+	max-height: 100vh;
+}
+.matched{
+	visibility: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
