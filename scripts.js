@@ -1,5 +1,6 @@
 var matches = 0;
 var wins = 0;
+var attempts = 0;
 var cards = [
 	'<img src="images/babysitter.jpg">',
 	'<img src="images/bananaguy.jpg">',
@@ -25,6 +26,7 @@ var randomCards = cards.sort(function() { return 0.5 - Math.random() });
 
 
 $(document).ready(function(){
+	$('.modal').modal('show');
 	var gridSize = 16;
 	var card = '<img src="images/square.jpeg">';
 
@@ -49,6 +51,8 @@ $(document).ready(function(){
 			$(this).toggleClass('flip');
 			var cardsUp = $('.mg-tile-inner.flip');
 				if(cardsUp.length === 2){
+					attempts = attempts + 1;
+					$( "#attempts" ).html(attempts);
 					// check to see if they are the same
 					if(cardsUp.find('img')[0].src == cardsUp.find('img')[1].src){
 						// the pictures are the same. they mathch

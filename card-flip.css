@@ -72,6 +72,12 @@ h1, h2{
 .matched{
 	visibility: hidden;
 }
+.modal-body{
+	text-align: center;
+}
+.modal-body .btn{
+	margin-right: 30px;
+}
 
 
 
