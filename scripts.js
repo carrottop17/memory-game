@@ -75,7 +75,7 @@ var randomCardsH = cardsH.sort(function() { return 0.5 - Math.random() });
 
 
 $(document).ready(function(){
-	$('.modal').modal('show');
+	$('#myModal').modal('show');
 	$('#easy').click(function() {
 		gridSize = 8;
 		var mgHTML = '';
@@ -93,6 +93,29 @@ $(document).ready(function(){
 		}
 		$('.mg-contents').html(mgHTML);
 		flipCard();
+	});
+
+	$('#easyWin').click(function() {
+		gridSize = 8;
+		var mgHTML = '';
+		var cardCounter = 0;
+		for(var i = 0; i < gridSize; i++){
+			if(i < 2){card = randomCardsE[0];
+			}else{card = randomCardsE[1];
+			}
+			mgHTML += '<div class="mg-tile col-sm-3">';
+				mgHTML += '<div class="mg-tile-inner">';
+					mgHTML += '<div class="mg-front">'+randomCardsE[i]+'</div>';
+					mgHTML += '<div class="mg-back"></div>';
+				mgHTML += '</div>';
+			mgHTML += '</div>';
+		}
+		$('.mg-contents').html(mgHTML);
+		flipCard();
+		matches = 0;
+		$( "#score" ).html(matches);
+		attempts = 0;
+		$( "#attempts" ).html(attempts);
 	});
 
 	$('#medium').click(function() {
@@ -114,6 +137,29 @@ $(document).ready(function(){
 		flipCard();
 	});
 
+	$('#mediumWin').click(function() {
+		gridSize = 16;
+		var mgHTML = '';
+		var cardCounter = 0;
+		for(var i = 0; i < gridSize; i++){
+			if(i < 2){card = randomCardsM[0];
+			}else{card = randomCardsM[1];
+			}
+			mgHTML += '<div class="mg-tile col-sm-3">';
+				mgHTML += '<div class="mg-tile-inner">';
+					mgHTML += '<div class="mg-front">'+randomCardsM[i]+'</div>';
+					mgHTML += '<div class="mg-back"></div>';
+				mgHTML += '</div>';
+			mgHTML += '</div>';
+		}
+		$('.mg-contents').html(mgHTML);
+		flipCard();
+		matches = 0;
+		$( "#score" ).html(matches);
+		attempts = 0;
+		$( "#attempts" ).html(attempts);
+	});
+
 	$('#hard').click(function() {
 		gridSize = 32;
 		var mgHTML = '';
@@ -132,9 +178,29 @@ $(document).ready(function(){
 		$('.mg-contents').html(mgHTML);
 		flipCard();
 	});
-	// var card = '<img src="images/square.jpeg">';
 
-	
+	$('#hardWin').click(function() {
+		gridSize = 32;
+		var mgHTML = '';
+		var cardCounter = 0;
+		for(var i = 0; i < gridSize; i++){
+			if(i < 2){card = randomCardsH[0];
+			}else{card = randomCardsH[1];
+			}
+			mgHTML += '<div class="mg-tile col-sm-3">';
+				mgHTML += '<div class="mg-tile-inner">';
+					mgHTML += '<div class="mg-front">'+randomCardsH[i]+'</div>';
+					mgHTML += '<div class="mg-back"></div>';
+				mgHTML += '</div>';
+			mgHTML += '</div>';
+		}
+		$('.mg-contents').html(mgHTML);
+		flipCard();
+		matches = 0;
+		$( "#score" ).html(matches);
+		attempts = 0;
+		$( "#attempts" ).html(attempts);
+	});
 
 	
 	function flipCard(){
@@ -167,6 +233,7 @@ $(document).ready(function(){
 					if(matches == (gridSize / 2)){
 						wins = wins+1;
 						$( "#wins" ).html(wins);
+						$('#myModalWin').modal('show');
 					};
 			});
 		});
