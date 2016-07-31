@@ -72,11 +72,11 @@ h1, h2{
 .matched{
 	visibility: hidden;
 }
-.modal-body{
+.modal-body, .modal-title{
 	text-align: center;
 }
 .modal-body .btn{
-	margin-right: 30px;
+	margin-right: 10px;
 }
 
 
